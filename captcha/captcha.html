@@ -18,35 +18,346 @@
       background: white;
       width: 390px;
       height: 300px;
+      position: relative;
+      padding: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-content: flex-start;
+      justify-content: flex-start;
     }
 
-    /* Your style here... */
+    .decoy-button {
+      background: #ddd;
+      border: 1px solid #aaa;
+      cursor: not-allowed;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    #solve {
+      position: absolute;
+      top: 100px;
+      left: 150px;
+      transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      z-index: 10;
+      cursor: pointer;
+    }
   </style>
 </head>
 
 <body>
   <div id="captcha-container">
-    <!-- Add your CAPTCHA here: -->
-    Hello world!
+    <!-- Decoy buttons -->
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
+    <button class="decoy-button">Solve</button>
 
-    <!-- We've added a sample button. Feel free to remove it: -->
-    <button id="solve">
-      Solve!
-    </button>
+    <!-- Real button -->
+    <button id="solve">Solve!</button>
   </div>
 
   <script type="text/javascript">
-    (function(window, document){
-      // This is how you tell the parent window that the CAPTCHA was successful.
-      function captchaSuccess() {
-        window.top.postMessage("success", '*');
+
+  function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+  (function(window, document){
+    const button = document.getElementById('solve');
+    const container = document.getElementById('captcha-container');
+    const decoyButtons = document.querySelectorAll('.decoy-button');
+
+    function captchaSuccess() {
+    
+    }
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
       }
+      return color;
+    }
 
-      // Your CAPTCHA code goes here, we've added a simple example below:
-      document.getElementById('solve')
-           .addEventListener('click', () => captchaSuccess());
+    function moveButtonRandomly() {
+      const maxX = container.clientWidth - button.offsetWidth;
+      const maxY = container.clientHeight - button.offsetHeight;
 
-    })(window, document);
-  </script>
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+
+      const newWidth = Math.floor(Math.random() * 80) + 40;
+      const newHeight = Math.floor(Math.random() * 30) + 25;
+
+      button.style.left = `${newX}px`;
+      button.style.top = `${newY}px`;
+      button.style.width = `${newWidth}px`;
+      button.style.height = `${newHeight}px`;
+
+      container.style.backgroundColor = getRandomColor();
+    }
+
+    button.addEventListener('mouseover', moveButtonRandomly);
+    button.addEventListener('click', captchaSuccess);
+
+    // Apply random rotation animations to decoy buttons
+    decoyButtons.forEach((btn, index) => {
+      const duration = (Math.random() * 3 + 2).toFixed(2); // 2–5 sec
+      const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
+      btn.style.animation = `spin-${index} ${duration}s linear infinite ${direction}`;
+
+      const styleSheet = document.styleSheets[0];
+      const angle = 360;
+      const keyframes = `@keyframes spin-${index} {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(${angle}deg); }
+      }`;
+      styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+    });
+
+    setInterval(() => {
+  document.body.style.backgroundColor = getRandomColor();
+  document.getElementById('captcha-container').style.border = `5px solid ${getRandomColor()}`;
+  
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(btn => {
+    btn.style.backgroundColor = getRandomColor();
+    btn.style.color = getRandomColor();
+  });
+}, 300);
+
+let currentRotation = 0;
+
+setInterval(() => {
+const solveBtn = document.getElementById('solve');
+  const container = document.getElementById('captcha-container');
+
+  function generateMathProblem() {
+    const num1 = Math.floor(Math.random() * 21) + 1;
+    const num2 = Math.floor(Math.random() * 30) + 1;
+    return {
+      question: `${num1} * ${num2}`,
+      answer: num1 * num2
+    };
+  }
+
+  function showMathChallenge() {
+    const { question, answer } = generateMathProblem();
+
+    // Clear container
+    container.innerHTML = '';
+
+    // Create problem elements
+    const questionEl = document.createElement('div');
+    questionEl.textContent = `Solve this in 5 seconds: ${question}`;
+    questionEl.style.fontSize = '20px';
+    questionEl.style.marginBottom = '10px';
+
+    const inputEl = document.createElement('input');
+    inputEl.type = 'number';
+    inputEl.style.fontSize = '16px';
+
+    const timerEl = document.createElement('div');
+    timerEl.textContent = '⏳ 5';
+    timerEl.style.marginTop = '10px';
+
+    container.appendChild(questionEl);
+    container.appendChild(inputEl);
+    container.appendChild(timerEl);
+
+    inputEl.focus();
+
+    // Start timer
+    let timeLeft = 5;
+    const interval = setInterval(() => {
+      timeLeft--;
+      timerEl.textContent = `⏳ ${timeLeft}`;
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        showFailMessage();
+      }
+    }, 1000);
+
+    // Input listener
+    inputEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        clearInterval(interval);
+        if (parseInt(inputEl.value) === answer) {
+          alert('✅ Correct!');
+          window.top.postMessage("success", '*');
+        } else {
+          showFailMessage();
+        }
+      }
+    });
+  }
+
+  function showFailMessage() {
+    alert('❌ Wrong or too slow! Try again.');
+    location.reload(); // Reset the CAPTCHA
+  }
+
+  solveBtn.addEventListener('click', showMathChallenge);
+}, 300);
+
+
+  })(window, document);
+
+</script>
+
 </body>
 </html>
