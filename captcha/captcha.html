@@ -2,227 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Joel</title>
+  <title>Disco CAPTCHA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style type="text/css">
-    html,
-    body {
-      background: pink;
+  <style>
+    html, body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
+      height: 100vh;
+      width: 130vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #captcha-container {
-      background: white;
+      background: rgb(187, 73, 73);
       width: 390px;
       height: 300px;
       position: relative;
-      padding: 10px;
       overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      align-content: flex-start;
-      justify-content: flex-start;
     }
 
-    .decoy-button {
-      background: #ddd;
-      border: 1px solid #aaa;
-      cursor: not-allowed;
-      padding: 5px 10px;
-      border-radius: 4px;
-    }
-
-    #solve {
+    .fake-btn {
       position: absolute;
-      top: 100px;
-      left: 150px;
-      transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s;
-      background: #4CAF50;
+      padding: 6px 14px;
+      background-color: rgb(56, 184, 223);
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    @keyframes discoColors {
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: green; }
+      80% { color: blue; }
+      100% { color: purple; }
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      animation: discoColors 0.8s infinite;
+    }
+
+    #stop-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: red;
       color: white;
       border: none;
-      border-radius: 4px;
-      z-index: 10;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 18px;
+    }
+
+    .math-area {
+      position: absolute;
+      top: 30%;
+      left: 35%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
-
 <body>
-  <div id="captcha-container">
-    <!-- Decoy buttons -->
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-    <button class="decoy-button">Solve</button>
-
-    <!-- Real button -->
-    <button id="solve">Solve!</button>
+<div id="captcha-container">
+    <div id="message" class="message hidden">WRONG</div>
+    <div id="math-area" class="math-area hidden">
+      <div id="problem-text"></div>
+      <div id="counter">0</div>
+      <button id="stop-btn">Stop</button>
+    </div>
   </div>
 
-  <script type="text/javascript">
-
-  function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-
-  (function(window, document){
-    const button = document.getElementById('solve');
+  <script>
     const container = document.getElementById('captcha-container');
-    const decoyButtons = document.querySelectorAll('.decoy-button');
+    const message = document.getElementById('message');
+    const mathArea = document.getElementById('math-area');
+    const problemText = document.getElementById('problem-text');
+    const counterDisplay = document.getElementById('counter');
+    const stopBtn = document.getElementById('stop-btn');
 
-    function captchaSuccess() {
-    
-    }
+    const totalButtons = 25;
+    const buttons = [];
+    let counter = 0;
+    let counterInterval = null;
+    let correctAnswer = 0;
 
     function getRandomColor() {
       const letters = '0123456789ABCDEF';
@@ -233,131 +118,95 @@
       return color;
     }
 
-    function moveButtonRandomly() {
-      const maxX = container.clientWidth - button.offsetWidth;
-      const maxY = container.clientHeight - button.offsetHeight;
-
-      const newX = Math.random() * maxX;
-      const newY = Math.random() * maxY;
-
-      const newWidth = Math.floor(Math.random() * 80) + 40;
-      const newHeight = Math.floor(Math.random() * 30) + 25;
-
-      button.style.left = `${newX}px`;
-      button.style.top = `${newY}px`;
-      button.style.width = `${newWidth}px`;
-      button.style.height = `${newHeight}px`;
-
-      container.style.backgroundColor = getRandomColor();
+    function clearButtons() {
+      buttons.forEach(btn => {
+        clearInterval(btn._spinInterval);
+        btn.remove();
+      });
+      buttons.length = 0;
     }
 
-    button.addEventListener('mouseover', moveButtonRandomly);
-    button.addEventListener('click', captchaSuccess);
+    function showWrongMessage() {
+      clearButtons();
+      message.classList.remove("hidden");
+      setTimeout(() => {
+        message.classList.add("hidden");
+        createButtons();
+      }, 5000);
+    }
 
-    // Apply random rotation animations to decoy buttons
-    decoyButtons.forEach((btn, index) => {
-      const duration = (Math.random() * 3 + 2).toFixed(2); // 2–5 sec
-      const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
-      btn.style.animation = `spin-${index} ${duration}s linear infinite ${direction}`;
+    function startMathChallenge() {
+      clearButtons();
 
-      const styleSheet = document.styleSheets[0];
-      const angle = 360;
-      const keyframes = `@keyframes spin-${index} {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(${angle}deg); }
-      }`;
-      styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+      // Create a random math problem
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = num1 + num2;
+      counter = 0;
+      counterDisplay.textContent = counter;
+      problemText.textContent = `Solve: ${num1} + ${num2}`;
+      mathArea.classList.remove("hidden");
+
+      counterInterval = setInterval(() => {
+        counter++;
+        counterDisplay.textContent = counter;
+      }, 500); // change to 1000ms if you want a 1-second interval
+    }
+
+    stopBtn.addEventListener("click", () => {
+      clearInterval(counterInterval);
+      if (counter === correctAnswer) {
+        window.top.postMessage("success", "*");
+      } else {
+        mathArea.classList.add("hidden");
+        showWrongMessage();
+      }
     });
 
-    setInterval(() => {
-  document.body.style.backgroundColor = getRandomColor();
-  document.getElementById('captcha-container').style.border = `5px solid ${getRandomColor()}`;
-  
-  const buttons = document.querySelectorAll('button');
-  buttons.forEach(btn => {
-    btn.style.backgroundColor = getRandomColor();
-    btn.style.color = getRandomColor();
-  });
-}, 300);
-
-let currentRotation = 0;
-
-setInterval(() => {
-const solveBtn = document.getElementById('solve');
-  const container = document.getElementById('captcha-container');
-
-  function generateMathProblem() {
-    const num1 = Math.floor(Math.random() * 21) + 1;
-    const num2 = Math.floor(Math.random() * 30) + 1;
-    return {
-      question: `${num1} * ${num2}`,
-      answer: num1 * num2
-    };
-  }
-
-  function showMathChallenge() {
-    const { question, answer } = generateMathProblem();
-
-    // Clear container
-    container.innerHTML = '';
-
-    // Create problem elements
-    const questionEl = document.createElement('div');
-    questionEl.textContent = `Solve this in 5 seconds: ${question}`;
-    questionEl.style.fontSize = '20px';
-    questionEl.style.marginBottom = '10px';
-
-    const inputEl = document.createElement('input');
-    inputEl.type = 'number';
-    inputEl.style.fontSize = '16px';
-
-    const timerEl = document.createElement('div');
-    timerEl.textContent = '⏳ 5';
-    timerEl.style.marginTop = '10px';
-
-    container.appendChild(questionEl);
-    container.appendChild(inputEl);
-    container.appendChild(timerEl);
-
-    inputEl.focus();
-
-    // Start timer
-    let timeLeft = 5;
-    const interval = setInterval(() => {
-      timeLeft--;
-      timerEl.textContent = `⏳ ${timeLeft}`;
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        showFailMessage();
+    function createButtons() {
+      for (let i = 0; i < totalButtons; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = 'Click Me';
+        btn.className = 'fake-btn';
+        btn.style.left = `${Math.random() * (container.offsetWidth - 80)}px`;
+        btn.style.top = `${Math.random() * (container.offsetHeight - 40)}px`;
+        container.appendChild(btn);
+        buttons.push(btn);
       }
-    }, 1000);
 
-    // Input listener
-    inputEl.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        clearInterval(interval);
-        if (parseInt(inputEl.value) === answer) {
-          alert('✅ Correct!');
-          window.top.postMessage("success", '*');
+      const realIndex = Math.floor(Math.random() * totalButtons);
+      buttons.forEach((btn, idx) => {
+        if (idx === realIndex) {
+          btn.addEventListener("click", startMathChallenge);
         } else {
-          showFailMessage();
+          btn.addEventListener("click", showWrongMessage);
         }
-      }
-    });
+
+        const spinInterval = setInterval(() => {
+          const angle = Math.floor(Math.random() * 360);
+          btn.style.transform = `rotate(${angle}deg)`;
+          btn.style.backgroundColor = getRandomColor();
+        }, 500 + Math.random() * 1000);
+        btn._spinInterval = spinInterval;
+      });
+    }
+
+    createButtons();
+
+  function getRandomColor() {
+    const r = Math.floor(Math.random() * 256); // 0–255
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
   }
 
-  function showFailMessage() {
-    alert('❌ Wrong or too slow! Try again.');
-    location.reload(); // Reset the CAPTCHA
+  function changeBackgroundColor() {
+    const container = document.getElementById("captcha-container");
+    container.style.backgroundColor = getRandomColor();
   }
 
-  solveBtn.addEventListener('click', showMathChallenge);
-}, 300);
-
-
-  })(window, document);
-
-</script>
-
+  // Change color every 2 seconds (2000ms)
+  setInterval(changeBackgroundColor, 2000);
+  </script>
 </body>
 </html>
