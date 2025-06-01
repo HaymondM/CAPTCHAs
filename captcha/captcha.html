@@ -103,7 +103,7 @@
     const counterDisplay = document.getElementById('counter');
     const stopBtn = document.getElementById('stop-btn');
 
-    const totalButtons = 25;
+    const totalButtons = 5; // Total number of buttons to create
     const buttons = [];
     let counter = 0;
     let counterInterval = null;
@@ -150,7 +150,7 @@
       counterInterval = setInterval(() => {
         counter++;
         counterDisplay.textContent = counter;
-      }, 500); // change to 1000ms if you want a 1-second interval
+      }, 400); // change to 1000ms if you want a 1-second interval
     }
 
     stopBtn.addEventListener("click", () => {
