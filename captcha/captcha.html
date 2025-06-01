@@ -147,10 +147,19 @@
       problemText.textContent = `Solve: ${num1} + ${num2}`;
       mathArea.classList.remove("hidden");
 
-      counterInterval = setInterval(() => {
+      function incrementCounter() {
         counter++;
         counterDisplay.textContent = counter;
-      }, 400); // change to 1000ms if you want a 1-second interval
+
+        // Randomly choose 400ms or 1000ms
+        const delay = Math.random() < 0.5 ? 100 : 1000; // 50% chance for each delay
+
+        // Schedule the next increment
+        counterTimeout = setTimeout(incrementCounter, delay);
+      }
+
+      // Start the first increment
+      incrementCounter();
     }
 
     stopBtn.addEventListener("click", () => {
